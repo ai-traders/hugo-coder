@@ -31,6 +31,7 @@
     .post-title, .post-author {
       margin-bottom: .75em;
       margin-top: .75em;
+      color: $fg-color;
     }
     .post-meta {
       i {
@@ -86,6 +87,17 @@
         @media only screen and (max-width : 768px) {
           display: block;
           text-align: left;
+        }
+      }
+      .author {
+        display: inline-block;
+        width: 20.0rem;
+        text-align: left;
+        margin-left: 1.5rem;
+        margin-right: 3.0rem;
+        @media only screen and (max-width : 768px) {
+          display: block;
+          text-align: right;
         }
       }
       .title {
