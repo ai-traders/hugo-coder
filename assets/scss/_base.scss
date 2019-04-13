@@ -7,11 +7,16 @@
 html {
 	box-sizing: border-box;
 	font-size: 62.5%;
+	background: url(/images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
   color: $fg-color;
-  background-color: $bg-color;
+  // background-color: $bg-color;
 	font-family: $text-font-family;
 	font-size: 1.6em;
 	font-weight: 300;
@@ -176,6 +181,7 @@ img {
   width: 100%;
   padding-left: 2.0rem;
   padding-right: 2.0rem;
+	//background-color: white
 }
 
 .fab {
