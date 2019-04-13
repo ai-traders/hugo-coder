@@ -28,8 +28,9 @@
     }
   }
   .post {
-    .post-title {
+    .post-title, .post-author {
       margin-bottom: .75em;
+      margin-top: .75em;
     }
     .post-meta {
       i {

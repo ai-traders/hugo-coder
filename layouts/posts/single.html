@@ -9,6 +9,9 @@
           <h1 class="title">{{ .Title }}</h1>
         </div>
         <div class="post-meta">
+          <span class="posted-on">
+            <h4 class="post-author">by {{ .Page.Params.Author }}</h4>
+          </span>
           <div class="date">
             <span class="posted-on">
               <i class="fas fa-calendar"></i>
