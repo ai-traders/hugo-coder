@@ -1,11 +1,11 @@
 <section class="container list">
-  <h1 class="title">
+  <h1 class="home-title">
     {{- if eq .Kind "taxonomy" -}}
       {{- i18n .Data.Singular | title -}}
       {{- print ": " -}}
     {{- end -}}
 
-    {{- .Title -}}
+    Recent blog posts
   </h1>
   <ul>
     {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
