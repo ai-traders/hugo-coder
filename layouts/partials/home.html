@@ -1,26 +1,20 @@
-<section class="container centered">
-  <div class="about">
-    {{ with .Site.Params.avatarurl }}
-      <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
+<section class="container list">
+  <h1 class="title">
+    {{- if eq .Kind "taxonomy" -}}
+      {{- i18n .Data.Singular | title -}}
+      {{- print ": " -}}
+    {{- end -}}
+
+    {{- .Title -}}
+  </h1>
+  <ul>
+    {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
+    {{ range $paginator.Pages }}
+    <li>
+      <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+      <a class="title" href="{{ .Params.ExternalLink | default .URL }}">{{ .Title }}</a>
+    </li>
     {{ end }}
-    <h1>{{ .Site.Params.author }}</h1>
-    <h2>{{ .Site.Params.info }}</h2>
-    {{ with .Site.Params.social }}
-    <ul>
-      {{ range sort .}}
-        {{ if .icon }}
-          <li>
-            <a href="{{ .url }}" aria-label="{{ .name }}">
-              <i class="{{ .icon }}" aria-hidden="true"></i>
-            </a>
-          </li>
-        {{ else }}
-          <li>
-            <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
-          </li>
-        {{ end }}
-      {{ end }}
-    </ul>
-    {{ end }}
-  </div>
+  </ul>
+  {{ partial "pagination.html" . }}
 </section>
