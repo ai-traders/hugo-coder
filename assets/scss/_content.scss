@@ -105,6 +105,28 @@
       @media only screen and (max-width : 768px) {
         margin: 1.6rem 0 1.6rem 0;
       }
+      .project {
+        display: inline-block;
+        width: 35.0rem;
+        text-align: right;
+        margin-right: 3.0rem;
+        @media only screen and (max-width : 768px) {
+          // display: block;
+          text-align: center;
+          margin-right: 0em;
+          margin-left: 0em;
+        }
+        a {
+          color: $fg-color-inverted;
+          &:hover,
+          &:focus {
+            color: $link-color
+          }
+        }
+        i {
+          margin-right: 1rem;
+        }
+      }
       .date {
         display: inline-block;
         width: 20.0rem;
@@ -134,6 +156,12 @@
         &:hover,
         &:focus {
           color: $link-color
+        }
+        @media only screen and (max-width : 768px) {
+          display: block;
+          text-align: center;
+          margin-right: 0em;
+          margin-left: 0em;
         }
       }
     }
