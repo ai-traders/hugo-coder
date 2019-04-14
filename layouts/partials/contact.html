@@ -6,53 +6,61 @@
 
     {{ .Content }}
 
-    <div class="about">
-      {{ with .Site.Params.tom_avatarurl }}
-        <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
-      {{ end }}
-      <h1>{{ .Site.Params.author_tom }}</h1>
-      <h2>{{ .Site.Params.tom_info }}</h2>
-      {{ with .Site.Params.tom_social }}
-      <ul>
-        {{ range sort .}}
-          {{ if .icon }}
-            <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}">
-                <i class="{{ .icon }}" aria-hidden="true"></i>
-              </a>
-            </li>
-          {{ else }}
-            <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
-            </li>
+<div class="container centered" >
+    <div class="display-table">
+        <div class="about">
+          {{ with .Site.Params.tom_avatarurl }}
+            <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
           {{ end }}
-        {{ end }}
-      </ul>
-      {{ end }}
-    </div>
-    <div class="about">
-      {{ with .Site.Params.ewa_avatarurl }}
-        <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
-      {{ end }}
-      <h1>{{ .Site.Params.author_ewa }}</h1>
-      <h2>{{ .Site.Params.ewa_info }}</h2>
-      {{ with .Site.Params.ewa_social }}
-      <ul>
-        {{ range sort .}}
-          {{ if .icon }}
-            <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}">
-                <i class="{{ .icon }}" aria-hidden="true"></i>
-              </a>
-            </li>
-          {{ else }}
-            <li>
-              <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
-            </li>
+          {{ with .Site.Params.ewa_avatarurl }}
+            <div class="avatar"><img src="{{ . | relURL }}" alt="avatar"></div>
           {{ end }}
-        {{ end }}
-      </ul>
-      {{ end }}
+        </div>
+        <div>
+          <div class="about">
+            <h1>{{ .Site.Params.author_tom }}</h1>
+            <h2>{{ .Site.Params.tom_info }}</h2>
+            {{ with .Site.Params.tom_social }}
+            <ul>
+              {{ range sort .}}
+                {{ if .icon }}
+                  <li>
+                    <a href="{{ .url }}" aria-label="{{ .name }}">
+                      <i class="{{ .icon }}" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                {{ else }}
+                  <li>
+                    <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
+                  </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+          <div class="about">
+            <h1>{{ .Site.Params.author_ewa }}</h1>
+            <h2>{{ .Site.Params.ewa_info }}</h2>
+            {{ with .Site.Params.ewa_social }}
+            <ul>
+              {{ range sort .}}
+                {{ if .icon }}
+                  <li>
+                    <a href="{{ .url }}" aria-label="{{ .name }}">
+                      <i class="{{ .icon }}" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                {{ else }}
+                  <li>
+                    <a href="{{ .url }}" aria-label="{{ .name }}">{{ .name }}</a>
+                  </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+        </div>
     </div>
+  </div>
   </article>
 </section>
